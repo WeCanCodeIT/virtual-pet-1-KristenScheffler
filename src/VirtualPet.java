@@ -33,6 +33,15 @@ public class VirtualPet {
         hungerLevel += 5;
         thirstLevel += 5;
         boredLevel += 5;
+        if (hungerLevel > 50) {
+            printHungryDog();
+        }
+        if (thirstLevel > 50) {
+            printThirstyDog();
+        }
+        if (boredLevel > 50) {
+            printBoredDog();
+        }
     }
 
     public String getName() {
@@ -57,6 +66,30 @@ public class VirtualPet {
 
     public void setBoredLevel(int boredLevel) {
         this.boredLevel = boredLevel;
+    }
+
+    public void printHungryDog() {
+        System.out.println(" / \\__");
+        System.out.println("(    @\\___");
+        System.out.println(" /         O");
+        System.out.println("/   )____/");
+        System.out.println("/_____/   ");
+    }
+
+    public void printBoredDog() {
+        System.out.println(" / \\__");
+        System.out.println("(    @\\___");
+        System.out.println(" /         O");
+        System.out.println("/   _____/");
+        System.out.println("/_____/   ");
+    }
+
+    public void printThirstyDog() {
+        System.out.println(" / \\__");
+        System.out.println("(    @\\___");
+        System.out.println(" /         O");
+        System.out.println("/   (_____/");
+        System.out.println("/_____/   U");
     }
 
     public void petStats() {
