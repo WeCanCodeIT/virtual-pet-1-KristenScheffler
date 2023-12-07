@@ -1,8 +1,8 @@
 public class VirtualPet {
     private String name;
-    private int hungerLevel = 50;
-    private int thirstLevel = 50;
-    private int boredLevel = 50;
+    private int hungerLevel = 0;
+    private int thirstLevel = 0;
+    private int boredLevel = 0;
 
     public VirtualPet(String name) {
         this.name = name;
