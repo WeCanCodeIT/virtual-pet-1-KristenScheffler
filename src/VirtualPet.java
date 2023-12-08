@@ -42,6 +42,10 @@ public class VirtualPet {
         if (boredLevel > 50) {
             printBoredDog();
         }
+        if (boredLevel > 75) {
+            boredLevel -= 5;
+            printPlay();
+        }
     }
 
     public String getName() {
@@ -90,6 +94,10 @@ public class VirtualPet {
         System.out.println(" /         O");
         System.out.println("/   (_____/");
         System.out.println("/_____/   U");
+    }
+
+    public void printPlay() {
+        System.out.println("Your dog has played with it's toy on its own! Bored Level down by 10");
     }
 
     public void petStats() {

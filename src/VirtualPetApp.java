@@ -5,7 +5,7 @@ public class VirtualPetApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Virtual Pet Game!");
 
-        System.out.print("Enter your pets name: ");
+        System.out.print("We currently have dogs available to adopt! Enter your dogs name: ");
         String name = scanner.nextLine();
 
         VirtualPet pet = new VirtualPet(name);
@@ -27,6 +27,9 @@ public class VirtualPetApp {
         if (pet.getBoredLevel() > 50) {
             pet.printBoredDog();
             System.out.println(pet.getName() + " is bored!");
+        }
+        if (pet.getBoredLevel() > 60) {
+            pet.printPlay();
         }
         System.out.println("What would you like to do?");
         System.out.println("Enter 1 to feed " + pet.getName());
