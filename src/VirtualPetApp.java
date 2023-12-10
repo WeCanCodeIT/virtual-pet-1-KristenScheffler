@@ -13,25 +13,27 @@ public class VirtualPetApp {
         int userChoice;
 
         do {
-        System.out.println("\nDuration: " + duration);
-        pet.petStats();
 
-        if (pet.getHungerLevel() > 50) {
+        if (pet.getHungerLevel() > 30) {
             pet.printHungryDog();
             System.out.println(pet.getName() + " is hungry!");
         }
-        if (pet.getThirstLevel() > 50) {
+        if (pet.getThirstLevel() > 30) {
             pet.printThirstyDog();
             System.out.println(pet.getName() + " is thirsty!");
         }
-        if (pet.getBoredLevel() > 50) {
+        if (pet.getBoredLevel() > 30) {
             pet.printBoredDog();
             System.out.println(pet.getName() + " is bored!");
         }
-        if (pet.getBoredLevel() > 60) {
+        if (pet.getBoredLevel() > 40) {
             pet.printPlay();
         }
-        System.out.println("What would you like to do?");
+
+        System.out.println("\nDuration: " + duration);
+        pet.petStats();
+
+        System.out.println("\nWhat would you like to do?");
         System.out.println("Enter 1 to feed " + pet.getName());
         System.out.println("Enter 2 to give water to " + pet.getName());
         System.out.println("Enter 3 to play with " + pet.getName());

@@ -4,6 +4,10 @@ public class VirtualPet {
     private int thirstLevel;
     private int boredLevel;
 
+    private boolean fedRecently = true;
+    private boolean givenWaterRecently = true;
+    private boolean playedRecently = true;
+
     public VirtualPet(String name) {
         this.name = name;
         this.hungerLevel = 5;
@@ -12,34 +16,45 @@ public class VirtualPet {
     }
 
     public void feed() {
-        this.hungerLevel -= 15;
+        this.hungerLevel -= 10;
+        if (hungerLevel < 0) {
+            hungerLevel = 0;
+        }
+        fedRecently = true;
     }
 
     public void giveDrink() {
-        this.thirstLevel -= 15;
+        this.thirstLevel -= 10;
+        if (thirstLevel < 0) {
+            thirstLevel = 0;
+        }
+        givenWaterRecently = true;
     }
 
     public void play() {
-        this.boredLevel -= 15;
+        this.boredLevel -= 10;
+        if (boredLevel < 0) {
+            boredLevel = 0;
+        }
+        if (boredLevel > 40) {
+            boredLevel -= 5;
+        }
+        playedRecently = true;
     }
 
     public void tick() {
-        hungerLevel += 5;
-        thirstLevel += 5;
-        boredLevel += 5;
-        if (hungerLevel > 50) {
-            printHungryDog();
+        if (!fedRecently) {
+            hungerLevel += 5;
         }
-        if (thirstLevel > 50) {
-            printThirstyDog();
+        if (!givenWaterRecently) {
+            thirstLevel += 5;
         }
-        if (boredLevel > 50) {
-            printBoredDog();
+        if (!playedRecently) {
+            boredLevel += 5;
         }
-        if (boredLevel > 75) {
-            boredLevel -= 5;
-            printPlay();
-        }
+        fedRecently = false;
+        givenWaterRecently = false;
+        playedRecently = false;
     }
 
     public String getName() {
@@ -91,7 +106,7 @@ public class VirtualPet {
     }
 
     public void printPlay() {
-        System.out.println("Your dog has played with it's toy on its own! Bored Level down by 10");
+        System.out.println("Your dog has played with it's toy on its own! Bored Level down by 5");
     }
 
     public void petStats() {
