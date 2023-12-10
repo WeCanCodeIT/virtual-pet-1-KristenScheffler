@@ -1,11 +1,14 @@
 public class VirtualPet {
     private String name;
-    private int hungerLevel = 5;
-    private int thirstLevel = 5;
-    private int boredLevel = 5;
+    private int hungerLevel;
+    private int thirstLevel;
+    private int boredLevel;
 
     public VirtualPet(String name) {
         this.name = name;
+        this.hungerLevel = 5;
+        this.thirstLevel = 5;
+        this.boredLevel = 5;
     }
 
     public void feed() {
