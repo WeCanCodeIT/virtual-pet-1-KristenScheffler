@@ -9,24 +9,15 @@ public class VirtualPet {
     }
 
     public void feed() {
-        hungerLevel -= 15;
-        if (hungerLevel < 0) {
-            hungerLevel = 0;
-        }
+        this.hungerLevel -= 15;
     }
 
     public void giveDrink() {
-        thirstLevel -= 15;
-        if (thirstLevel < 0) {
-            thirstLevel = 0;
-        }
+        this.thirstLevel -= 15;
     }
 
     public void play() {
-        boredLevel -= 15;
-        if (boredLevel < 0) {
-            boredLevel = 0;
-        }
+        this.boredLevel -= 15;
     }
 
     public void tick() {

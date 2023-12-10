@@ -67,6 +67,5 @@ public class VirtualPetApp {
         } while (userChoice != 4);
 
         scanner.close();
-        
     }
 }
