@@ -26,7 +26,7 @@ public class VirtualPetApp {
             pet.printBoredDog();
             System.out.println(pet.getName() + " is bored!");
         }
-        if (pet.getBoredLevel() > 40) {
+        if (pet.getBoredLevel() >= 40) {
             pet.printPlay();
         }
 

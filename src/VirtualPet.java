@@ -36,9 +36,6 @@ public class VirtualPet {
         if (boredLevel < 0) {
             boredLevel = 0;
         }
-        if (boredLevel > 40) {
-            boredLevel -= 5;
-        }
         playedRecently = true;
     }
 
@@ -51,6 +48,9 @@ public class VirtualPet {
         }
         if (!playedRecently) {
             boredLevel += 5;
+        if (boredLevel >= 40) {
+            boredLevel -= 2;
+        }
         }
         fedRecently = false;
         givenWaterRecently = false;
@@ -106,7 +106,7 @@ public class VirtualPet {
     }
 
     public void printPlay() {
-        System.out.println("Your dog has played with it's toy on its own! Bored Level down by 5");
+        System.out.println("Your dog has played with it's toy on its own! Bored Level down by 2");
     }
 
     public void petStats() {
